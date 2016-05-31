@@ -369,7 +369,7 @@ void HttpBidderInterface::routerFormat(OpenRTB::Bid const & bid, Bid & theBid,
         return;
     }
     theBid.priority = bid.ext["priority"].asDouble();
-
+    theBid.ext = bid.ext;
 
     tie(agent, config) = findAgent(externalId);
     if (config == nullptr) {
